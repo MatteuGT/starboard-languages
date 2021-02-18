@@ -1,6 +1,6 @@
 module.exports = {
-  name: "English (GB)",
-  HELLO_WORLD: "Hello world!",
+  name: "Japanese",
+  HELLO_WORLD: "こんちゃ！",
 
   // miscellaneous - could be used anywhere
   IMAGE: num => `Image${typeof num === "number" && num ? ` ${num}` : ""}`,
@@ -10,12 +10,12 @@ module.exports = {
   
   // starred message embed - stuff that shows up in starboard message embeds
   CLICK_TO_JUMP: deleted =>
-    !deleted ? "Click to jump to message!" : "Context (message was deleted)",
+    !deleted ? "あのメッセージに行くのためにクリックする" : "文脈 (あのメッセージは削除しました)",
   SHORT_CLICK_TO_JUMP: deleted =>
     // if for whatever reason there are 25 fields and content over 1928 and less than 1947 chars
-    !deleted ? "Click!" : "Context",
+    !deleted ? "クリック!" : "文脈",
   REFERENCED_MESSAGE: (isReply, deleted) =>
-    isReply ? `Replying to this message${deleted ? " (deleted)" : ""}` : "Referenced Message",
+    isReply ? `Replying to this message${deleted ? " (削除しました)" : ""}` : "Referenced Message",
   TWEET: (authorName, number) => `Tweet${number && typeof number === "number" ? ` ${number}` : ""} from ${authorName}`,
   UNKNOWN: tag => `Unknown${tag ? "#0000" : ""}`,
   FROM_SERVER: server => `From ${server}`,
@@ -29,12 +29,12 @@ module.exports = {
   .stripIndents(),
 
   // upon joining a server
-  GET_STARTED: "Get Started",
+  GET_STARTED: "始めましょう！",
   GET_STARTED_EMBED: (req, prefix) => `I've detected a channel named \`#starboard\`, so this is now where all starred messages will go. You can change this later.
   Currently in this server, messages need to have ${req} star reactions to get posted in this channel, which can be changed.
   You can set the server up properly with \`${prefix}setup\`, this will walk you through all the settings.
   And most importantly, have fun!`,
-  GET_STARTED_FOOTER: "Thank you for using Starboard!",
+  GET_STARTED_FOOTER: "Starboardボットを使ってありがとうございました！",
 
   // message event
   CANT_SPEAK: "I cannot speak in that channel! Please get a moderator to change my permissions for that channel, or try using me in a different channel.",
